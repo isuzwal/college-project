@@ -28,6 +28,7 @@ export default function Navbar({ user }: NavbarProps) {
   const handlebutton = () => {
     setOpen((prev) => !prev);
   };
+
   return (
     <div className="relative rounded-xl flex items-center justify-between  px-1.5 py-2 ">
       <div>
@@ -50,7 +51,7 @@ const AuthLink = ({ open, setOpen, user }: ButtonProps & { user?: NavbarProps["u
     return (
       <div className="flex  items-center gap-2 ">
         <div className="relative  size-6 rounded-full overflow-hidden">
-          <img src={user.image || "/images/isuzwal.jpg"} className="rounded-full w-full h-full" />
+          <img src={user?.image || "/images/isuzwal.jpg"} className="rounded-full w-full h-full" />
         </div>
       </div>
     );
