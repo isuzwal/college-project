@@ -2,7 +2,7 @@
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import React, { useState } from "react";
-import { ButtonComp, ButtonProps, ButtonSections } from "./buttons-part";
+import { ButtonComp, ButtonProps, ButtonSections } from "../pre-build-comp/buttons-part";
 
 import { useRef } from "react";
 
