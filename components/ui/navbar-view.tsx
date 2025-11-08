@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { Menu, Sun, Moon } from "lucide-react";
-import { UserProps } from "@/lib/props";
 import { useTheme } from "next-themes";
 import Link from "next/link";
+import { UserProps } from "@/lib/props";
 
 
 interface ButtonProps {
