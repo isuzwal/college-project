@@ -23,18 +23,18 @@ interface btnfn {
 }
 export const ButtonSections = ({ addbtn }: btnfn) => {
   return (
-    <div className="flex   items-center gap-1  px-1.5">
+    <div className="flex   w-full justify-between items-center   px-1.5">
       <button
         onClick={() => addbtn("Primary", "primary")}
         className={cn(
-          "rounded-md text-[14px] px-5 py-1.5 font-semibold text-neutral-300  bg-black cursor-pointer"
+          "rounded-md text-[14px] px-5 py-1.5 w-32 font-semibold text-neutral-300  bg-black cursor-pointer"
         )}>
         Primary
       </button>
       <button
         onClick={() => addbtn("Secondary", "secondary")}
         className={cn(
-          "rounded-md text-[14px]  px-5 py-1.5  font-semibold text-black  bg-primary cursor-pointer"
+          "rounded-md text-[14px]  px-5 py-1.5  w-32 font-semibold text-black  bg-primary cursor-pointer "
         )}>
         Secondary
       </button>
@@ -43,7 +43,7 @@ export const ButtonSections = ({ addbtn }: btnfn) => {
 };
 export const ButtonComp = ({ button, className = "" ,onMouseDown}: ButtonCompProps  ) => {
   const { variant, text } = button.props;
-  const btnClass = variant === "primary" ? "text-neutral-300 bg-black" : "text-black bg-primary";
+  const btnClass = variant === "primary" ? "text-white bg-neutral-900/90 shadow-2xs" : "text-black bg-primary";
   return (
     <button onMouseDown={(event)=>onMouseDown(button.id,event)}  
       style={{ position: "absolute", left: button.position.x, top: button.position.y }}

@@ -1,23 +1,16 @@
 "use client";
 import React, { useState } from "react";
 import { Menu, Sun, Moon } from "lucide-react";
-
+import { UserProps } from "@/lib/props";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 
-interface NavbarProps {
-  user: {
-    name: string | null;
-    email: string;
-    image?: string | null;
-  } | null;
-}
 
 interface ButtonProps {
   open: boolean;
   setOpen: () => void;
 }
-export default function Navbar({ user }: NavbarProps) {
+export default function Navbar({ user }: UserProps) {
   const [open, setOpen] = useState<boolean>(false);
   const { theme, setTheme } = useTheme();
 
@@ -46,7 +39,7 @@ export default function Navbar({ user }: NavbarProps) {
   );
 }
 
-const AuthLink = ({ open, setOpen, user }: ButtonProps & { user?: NavbarProps["user"] }) => {
+const AuthLink = ({ open, setOpen, user }: ButtonProps & { user?: UserProps["user"] }) => {
   if (user) {
     return (
       <div className="flex  items-center gap-2 ">
@@ -60,9 +53,10 @@ const AuthLink = ({ open, setOpen, user }: ButtonProps & { user?: NavbarProps["u
   return (
     <div className="flex items-center gap-2 ">
       <div className="hidden md:flex gap-2  rounded-lg px-2 py-1">
-        <button className="rounded-[8px] bg-secondary border-secondary text-[13px] font-semibold px-6 py-1.5 cursor-pointer">
+         <Link
+          href={"/free"} className="rounded-[8px] bg-secondary border-secondary text-[13px] font-semibold px-6 py-1.5 cursor-pointer">
           Try one
-        </button>
+        </Link>
         <Link
           href={"/login"}
           className="rounded-[8px] text-center cursor-pointer   bg-primary border-primary text-[13px] font-semibold px-4 text-background py-1.5">
