@@ -1,12 +1,18 @@
-import {connect } from "mongoose";
+import { connect } from "mongoose";
+import dotenv from "dotenv";
 
+dotenv.config();
 
-export const MongoDB_Connections=async()=>{
- try{
-    await connect("mongodb+srv://isuzwal_db_user:Oi32FA8OaqGOQXAy@cluster1.vyrwper.mongodb.net/flux?appName=Cluster1")
- console.log("Connections is working")
- }catch(error){
- console.log("Conections Fail Data",error)
- }
-}
-
+const DATABASE_UTL = process.env.DATA_BASE_URL;
+export const MongoDB_Connections = async () => {
+  try {
+    if (!DATABASE_UTL) {
+      console.log("URL is Missing ");
+    } else {
+      await connect(DATABASE_UTL);
+    }
+    console.log("Connections is working");
+  } catch (error) {
+    console.log("Conections Fail Data", error);
+  }
+};

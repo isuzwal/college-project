@@ -17,4 +17,4 @@ export const ErrorMiddleware=(
      })
      
     res.status(errorResponse.statusCode).json(errorResponse)
-}
+} 

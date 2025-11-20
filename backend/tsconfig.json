@@ -4,7 +4,8 @@
     "outDir": "./dist",
     
     "target": "ES2020",  
-    "module": "es2020",
+    "module": "commonjs",
+    // "module": "es2020",
     "lib": ["ES2020"],   
     "types": ["node"], 
     
@@ -15,5 +16,6 @@
     "moduleResolution": "node", 
     "declaration": true,
     "sourceMap": true
-  }
+  },
+    "include": ["src/**/*"]
 }
